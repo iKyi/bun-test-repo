@@ -1,14 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect } from "react"
+import appClient from "./api/appClient"
 
 function App() {
-  const [count, setCount] = useState(0)
 
+  useEffect(() => {
+    appClient.anime.getAnimeRecommendations({ id: 1 }).then(data => console.log(data))
+  }, [])
   return (
     <>
-test
+      test
     </>
   )
 }
